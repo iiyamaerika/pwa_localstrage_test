@@ -1,8 +1,10 @@
 // PWA対応：Service Worker
 
-var CACHE_NAME = 'color-name';
+var CACHE_NAME = 'localstrage-test';
 var urlsToCache = [
-    '/localstrage-test/index.js'
+    '/localstrage-test/personal-greeting.html',
+    '/localstrage-test/js/index.js'
+
 ];
 
 // インストール処理
