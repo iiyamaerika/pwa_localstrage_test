@@ -1,6 +1,6 @@
 {
   "name": "ローカルストレージテスト",
-  "short_name": "ローカルストレージテスト",
+  "short_name": "localstrage_test",
   "icons": [
     {
       "src": "./img/192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "./personal-greeting.html",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#4e342e"
