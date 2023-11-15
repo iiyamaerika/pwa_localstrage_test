@@ -2,7 +2,7 @@
 
 var CACHE_NAME = 'localstrage-test';
 var urlsToCache = [
-    '/localstrage-test/personal-greeting.html',
+    '/localstrage-test/index.html',
     '/localstrage-test/js/index.js'
 
 ];

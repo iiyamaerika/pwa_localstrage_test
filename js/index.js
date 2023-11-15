@@ -7,7 +7,7 @@ const submitBtn = document.querySelector("#submitname");
 const forgetBtn = document.querySelector("#forgetname");
 
 const h1 = document.querySelector("h1");
-const personalGreeting = document.querySelector(".personal-greeting");
+const personalGreeting = document.querySelector(".index");
 
 // ボタンが押されたときにフォームを送信しないようにする
 form.addEventListener('submit', e => e.preventDefault());
