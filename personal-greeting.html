@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal greeting</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        margin: 0 auto;
+        max-width: 1024px;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      header, footer {
+        background: cyan;
+        padding: 20px;
+        border: 1px solid black;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      form {
+        font-size: 0.8rem;
+      }
+
+      .personal-greeting {
+        font-weight: bold;
+      }
+    </style>
+    <link rel="manifest" href="manifest.json"/>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Our website</h1>
+
+      <form>
+        <div class="remember">
+          <label for="entername">Enter your name:</label>
+          <input id="entername" type="text" required>
+          <input id="submitname" type="submit" value="Say hello">
+        </div>
+        <div class="forget">
+          <label for="forgetname">Want me to forget you?</label>
+          <input id="forgetname" type="reset" value="Forget">
+        </div>
+      </form>
+    </header>
+
+    <main>
+
+      <p class="personal-greeting">Welcome to our website.</p>
+      <form>
+        <div class="inputform">
+          <label for="namelabel">名前</label>
+          <input id="input" name="name" placeholder="例）鈴木　太郎">
+          <input id="inputname" type="submit" value="保存">
+        </div>
+      </form>
+
+    </main>
+
+    <footer>
+      <p>Copyright nobody. Use the code as you like.</p>
+    </footer>
+  </body>
+</html>
