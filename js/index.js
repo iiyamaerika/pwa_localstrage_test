@@ -35,6 +35,7 @@ submitMailBtn.addEventListener('click', () => {
 forgetBtn.addEventListener('click', () => {
   // 保存してある名前をウェブストレージから削除
   localStorage.removeItem('name');
+  localStorage.removeItem('mail');
   // 再び nameDisplayCheck() を実行して、一般的な挨拶を表示するとともにフォーム表示を更新する
   nameDisplayCheck();
 });
