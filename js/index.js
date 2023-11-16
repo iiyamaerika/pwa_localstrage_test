@@ -1,23 +1,34 @@
 // 必要な定数を作成
-const rememberDiv = document.querySelector(".remember");
+const rememberDiv = document.querySelector(".remember");　　//クラスは「.（カンマ）」に続けて属性値を記述
+const inputFormDiv = document.querySelector(".inputform");
 const forgetDiv = document.querySelector(".forget");
 const form = document.querySelector("form");
-const nameInput = document.querySelector("#entername");
-const submitBtn = document.querySelector("#submitname");
+const nameInput = document.querySelector("#entername");　　//id属性の場合は「#」に続けて属性値を記述
+const mailInput = document.querySelector("#entermail");
+const submitNameBtn = document.querySelector("#submitname");
+const submitMailBtn = document.querySelector("#submitmail");
 const forgetBtn = document.querySelector("#forgetname");
 
 const h1 = document.querySelector("h1");
-const personalGreeting = document.querySelector(".index");
+const personalGreeting = document.querySelector(".personal-greeting");
 
 // ボタンが押されたときにフォームを送信しないようにする
 form.addEventListener('submit', e => e.preventDefault());
 
 // 'Say hello' ボタンがクリックされたら関数を実行する
-submitBtn.addEventListener('click', () => {
+submitNameBtn.addEventListener('click', () => {
   // 入力された名前をウェブストレージに保存
   localStorage.setItem('name', nameInput.value);
   // nameDisplayCheck() を動作させ、パーソナライズされた挨拶の表示と、フォームの表示を更新する
   nameDisplayCheck();
+});
+
+// メールの'保存' ボタンがクリックされたら関数を実行する
+submitMailBtn.addEventListener('click', () => {
+  // 入力されたメールをウェブストレージに保存
+  localStorage.setItem('mail', mailInput.value);
+  // mailDisplayCheck() を動作させる
+  // mailDisplayCheck();
 });
 
 // 'Forget' ボタンがクリックされたら関数を実行する
@@ -49,21 +60,14 @@ function nameDisplayCheck() {
   }
 }
 
-// ページ読み込み時にローカルストレージから値を取得してフォームに再表示する
-window.onload = function() {
-  var input = document.getElementById('input');
-  input.value = localStorage.getItem('inputValue');
-  if (InputValue !== null) {
+  // 'mail' というデータ項目がウェブストレージに保存されているかどうかを調べる
+  if(localStorage.getItem('mail')) {
+    // もし保存されていたら表示する
+    var input = document.getElementById('entermail');
+    var inputValue = localStorage.getItem('mail');
     input.value = inputValue;
   }
-}
 
-// フォームの値が変更されたらローカルストレージに保存する
-document.getElementById('input').addEventListener('change',function(){
-  var input = document.getElementById('input');
-  localStorage.setItem('inputValue',input.value);
-});
-
-// run nameDisplayCheck() when the page first loads to check wether a personal name was previously
-// set, and if so display the personalized greeting. If not, show the generic greeting
+// ページが最初に読み込まれるときに nameDisplayCheck() を実行して、個人名が以前に使用されていたかどうかを確認します。
+// 設定されている場合は、パーソナライズされた挨拶を表示します。 そうでない場合は、一般的な挨拶を表示します
 nameDisplayCheck();
